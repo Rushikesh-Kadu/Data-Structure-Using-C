@@ -28,6 +28,7 @@ void doubleArray(struct DynamicArray *arr)
     free(arr->ptr);
     arr->ptr = ptr1;
 }
+
 void append(struct DynamicArray *arr,int data)
 {
     if(arr->lastindex==arr->capacity-1)
@@ -120,7 +121,7 @@ void display(struct DynamicArray *arr)
         int i;
         for(i=0;i<=arr->lastindex;i++)
            printf("%d ",arr->ptr[i]);
-        printf("\t\t%d  %d",arr->lastindex,arr->capacity);
+        // printf("\t\t%d  %d",arr->lastindex,arr->capacity);
     }
         printf("\n");
 }
