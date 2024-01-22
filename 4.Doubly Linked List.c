@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<conio.h>
+#include<stdlib.h>
 
 struct node
 {
@@ -54,13 +55,13 @@ struct node* searchItem(struct node *s,int data)
             s=s->next;
         }
     }
-    return -1;
+    return (struct node*)-1;
 }
 
 void insertAfter(struct node **s,int after,int data)
 {
     struct node *t = searchItem(*s,after);
-    if(t!=-1)
+    if(t!=(struct node*)-1)
     {
         struct node *n = malloc(sizeof(struct node));
         n->item = data;
@@ -115,7 +116,7 @@ void removeNode(struct node **s,int data)
     else
     {
         struct node *t = searchItem(*s,data);
-        if(t!=-1)
+        if(t!=(struct node*)-1)
         {
             if(t->prev!=NULL)
                 t->prev->next = t->next;
